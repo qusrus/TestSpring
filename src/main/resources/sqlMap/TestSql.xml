@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qusrus.mapper.TestMapper">
+    <resultMap id="test" type="com.qusrus.mapper.TestMapper">
+        <result property="test_id_pk" column="test_id_pk"/>
+        <result property="test_name" column="test_name"/>
+    </resultMap>
+
+    <insert id="insertTest" parameterType="com.qusrus.dto.TestDTO">
+        INSERT INTO public.testtb (test_id_pk, test_name)
+        VALUES (#{test_id_pk}, #{test_name})
+    </insert>
+</mapper>
