@@ -25,12 +25,11 @@ public class UserController {
         return "Home";
     }
 
-    @RequestMapping(value = "AddUserForm", method = {RequestMethod.POST, RequestMethod.GET})
-    public ModelAndView AddUserForm() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("AddUserForm");
-        return modelAndView;
+    @RequestMapping(value = "AddUserForm")
+    public String AddUserForm() {
+        return "AddUserForm";
     }
+
     @RequestMapping(value = "AddUser", method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView AddUser(UserDTO userDTO, HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView();
@@ -38,12 +37,12 @@ public class UserController {
         modelAndView.setViewName("Home");
         return modelAndView;
     }
-    @RequestMapping(value = "SearchUserForm", method = {RequestMethod.POST, RequestMethod.GET})
-    public ModelAndView SearchUserForm () {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("SearchUserForm");
-        return modelAndView;
+
+    @RequestMapping(value = "SearchUserForm")
+    public String SearchUserForm () {
+        return "SearchUserForm";
     }
+
     @RequestMapping(value = "SearchUser", method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView SearchUser (UserDTO userDTO, HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView();
